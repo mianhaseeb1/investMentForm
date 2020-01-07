@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Spatie\Activitylog\Traits\LogsActivity;
+use  Spatie\Activitylog\Traits\CausesActivity;
 
 /**
  * Class User.
@@ -24,7 +26,9 @@ class User extends Authenticatable
         UserAttribute,
         UserRelationship,
         UserSendPasswordReset,
-        HasApiTokens;
+        HasApiTokens,
+        CausesActivity,
+        LogsActivity;
 
     /**
      * The database table used by the model.
@@ -32,6 +36,7 @@ class User extends Authenticatable
      * @var string
      */
     protected $table;
+    protected $logAttributes = ['*'];
 
     /**
      * The attributes that are mass assignable.
@@ -43,6 +48,7 @@ class User extends Authenticatable
         'last_name',
         'email',
         'status',
+        'phone',
         'confirmation_code',
         'confirmed',
         'created_by',
@@ -69,6 +75,7 @@ class User extends Authenticatable
         parent::__construct($attributes);
         $this->table = config('access.users_table');
     }
+
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.

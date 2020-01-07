@@ -52,7 +52,8 @@ class UserController extends Controller
      */
     public function index(ManageUserRequest $request)
     {
-        return new ViewResponse('backend.access.users.index');
+        // dd("");
+        return new ViewResponse('Backend.access.users.index');
     }
 
     /**
@@ -63,7 +64,7 @@ class UserController extends Controller
     public function create(CreateUserRequest $request)
     {
         $roles = $this->roles->getAll();
-
+// dd($roles);
         return new CreateResponse($roles);
     }
 
@@ -125,6 +126,7 @@ class UserController extends Controller
      */
     public function destroy(User $user, DeleteUserRequest $request)
     {
+        // dd("");
         $this->users->delete($user);
 
         return new RedirectResponse(route('admin.access.user.index'), ['flash_success' => trans('alerts.backend.users.deleted')]);

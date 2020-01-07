@@ -141,7 +141,7 @@ return [
                     'sort'                   => 'Sort',
                     'active'                 => 'Active',
                 ],
-
+                
                 'users' => [
                     'active'                  => 'Active',
                     'associated_roles'        => 'Associated Roles',
@@ -165,7 +165,14 @@ return [
                 'seo_description' => 'SEO Description',
                 'is_active'       => 'Active',
             ],
-
+'emailtemplates' => [
+                'title'       => 'Title',
+                'type'        => 'Type',
+                'subject'     => 'Subject',
+                'body'        => 'Body',
+                'placeholder' => 'Placeholder',
+                'is_active'   => 'Active',
+            ],
             'blogcategories' => [
                 'title'     => 'Blog Category',
                 'is_active' => 'Active',

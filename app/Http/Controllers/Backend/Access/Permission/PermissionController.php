@@ -41,7 +41,7 @@ class PermissionController extends Controller
      */
     public function index(ManagePermissionRequest $request)
     {
-        return new ViewResponse('backend.access.permissions.index');
+        return new ViewResponse('Backend.access.permissions.index');
     }
 
     /**

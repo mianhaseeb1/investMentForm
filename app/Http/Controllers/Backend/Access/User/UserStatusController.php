@@ -35,7 +35,7 @@ class UserStatusController extends Controller
      */
     public function getDeactivated(ManageDeactivatedRequest $request)
     {
-        return view('backend.access.users.deactivated');
+        return view('Backend.access.users.deactivated');
     }
 
     /**
@@ -45,7 +45,8 @@ class UserStatusController extends Controller
      */
     public function getDeleted(ManageDeletedRequest $request)
     {
-        return view('backend.access.users.deleted');
+        // dd("delete");
+        return view('Backend.access.users.deleted');
     }
 
     /**
@@ -57,6 +58,7 @@ class UserStatusController extends Controller
      */
     public function mark(User $user, $status, EditUserRequest $request)
     {
+        // dd("");
         $this->users->mark($user, $status);
 
         return redirect()->route($status == 1 ? 'admin.access.user.index' : 'admin.access.user.deactivated')->withFlashSuccess(trans('alerts.backend.users.updated'));

@@ -28,7 +28,7 @@ class EditResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.access.permissions.edit')
+        return view('Backend.access.permissions.edit')
             ->withPermission($this->permission);
     }
 }

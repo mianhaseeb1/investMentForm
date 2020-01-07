@@ -12,6 +12,12 @@ Route::post('/get/cities', 'FrontendController@getCities')->name('get.cities');
  * These frontend controllers require the user to be logged in
  * All route names are prefixed with 'frontend.'
  */
+
+/*
+ * Company Management
+ */
+
+
 Route::group(['middleware' => 'auth'], function () {
     Route::group(['namespace' => 'User', 'as' => 'user.'], function () {
         /*

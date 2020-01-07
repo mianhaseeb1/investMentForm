@@ -28,7 +28,7 @@ class CreateResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.access.permissions.create')
+        return view('Backend.access.permissions.create')
                 ->withPermissionCount($this->permissions->getCount());
     }
 }

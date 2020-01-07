@@ -1,6 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
+  @include('includes.partials.messages')
 
     <div class="row">
 

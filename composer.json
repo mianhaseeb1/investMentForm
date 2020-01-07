@@ -1,6 +1,6 @@
 {
-    "name": "viral/laravel-adminpanel",
-    "description": "The Laravel AdminPanel with API Boilerplate.",
+    "name": "webjobs",
+    "description": "laravel expert.",
     "keywords": [
         "framework",
         "laravel",
@@ -24,12 +24,15 @@
         "laravel/socialite": "^4.2",
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "6.0.*",
+        "spatie/laravel-activitylog": "^3.2",
         "spatie/laravel-cors": "^1.6",
         "unisharp/laravel-filemanager": "~1.8",
-        "yajra/laravel-datatables-oracle": "~9.0"
+        "yajra/laravel-datatables-oracle": "~9.0",
+         "realrashid/sweet-alert": "^3.0",
+          "proengsoft/laravel-jsvalidation": ">2.5.0"
     },
     "require-dev": {
-        "bvipul/generator": "^v6",
+        "bvipul/generator": "^v5.8.2",
         "codedungeon/phpunit-result-printer": "^0.26",
         "friendsofphp/php-cs-fixer": "^2.14",
         "fzaninotto/faker": "^1.4",

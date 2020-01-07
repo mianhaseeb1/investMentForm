@@ -9,11 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>@yield('title', app_name())</title>
-
+         <link href="css/style.css" rel="stylesheet">
+        <link href="css/style-responsive.css" rel="stylesheet">
         <!-- Meta -->
-        <meta name="description" content="@yield('meta_description', 'Laravel AdminPanel')">
-        <meta name="author" content="@yield('meta_author', 'Viral Solani')">
-        <meta name="keywords" content="@yield('meta_keywords', 'Laravel AdminPanel')">
+        <meta name="description" content="@yield('meta_description', 'Mian Haseeb Javedl')">
+
         @yield('meta')
 
         <!-- Styles -->
@@ -50,6 +50,9 @@
             <div class="container">
                 @include('includes.partials.messages')
                 @yield('content')
+                
+         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+          @include('sweetalert::alert')
             </div><!-- container -->
         </div><!--#app-->
 

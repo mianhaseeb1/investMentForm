@@ -28,6 +28,6 @@ class ShowResponse implements Responsable
      */
     public function toResponse($request)
     {
-        return view('backend.access.users.show')->withUser($this->user);
+        return view('Backend.access.users.show')->withUser($this->user);
     }
 }

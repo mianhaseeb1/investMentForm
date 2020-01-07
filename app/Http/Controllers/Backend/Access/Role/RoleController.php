@@ -49,7 +49,7 @@ class RoleController extends Controller
      */
     public function index(ManageRoleRequest $request)
     {
-        return new ViewResponse('backend.access.roles.index');
+        return new ViewResponse('Backend.access.roles.index');
     }
 
     /**
