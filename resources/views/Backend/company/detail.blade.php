@@ -309,9 +309,12 @@
              <!--    <th>Action</th> -->
                
             </tr>
-           
-            <tr>
-                <td><a href='{{url("$file->Commercial")}}'>Click To Download</a></td>
+           @if($file!=null)
+           <tr>
+                <td>
+                    <a href='{{url("$file->Commercial")}}'>
+                    Click To Download</a>
+                </td>
                 <td><a href='{{url("$file->Management")}}'>Click To Download</a></td>
                 <td><a href='{{url("$file->Financial")}}'>Click To Download</a></td>
                 <td><a href='{{url("$file->Forecast")}}'>Click To Download</a></td>
@@ -322,6 +325,9 @@
                 <td><a href='{{url("$file->Authorised")}}'>Click To Download</a></td>
                 <td><a href='{{url("$file->Business_plan")}}'>Click To Download</a></td>
             </tr>
+        @else 
+            
+            @endif
         </thead>                       </tbody>
                         </table>
                     </div>
