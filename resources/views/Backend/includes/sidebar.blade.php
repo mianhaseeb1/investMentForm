@@ -21,9 +21,22 @@
                         <h3 class="navigation-title">Navigation</h3>
                     </li>
                     <li class="active"><a href=""><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
-                    <li class="menu-list">
+         
+         <li class="menu-list">
+                             @permission('view-access-management')
+                        <a href=""><i class="fa fa-laptop"></i>  <span>{{ trans('menus.backend.access.title') }}</span></a>
+                        <ul class="child-list">
+                @permission('view-user-management')               
+    <li><a href="{{ route('admin.access.user.index') }}">
+    {{ trans('labels.backend.access.users.management') }}
+    </a></li>
+                     @endauth
 
+                                             
+                        </ul>
+                    @endauth          
 
+ <li class="menu-list">
                         <a href="#"><i class="fa fa-laptop"></i>  <span>InvestMent</span></a>
                         <ul class="child-list">
                        

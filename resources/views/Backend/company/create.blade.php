@@ -20,7 +20,7 @@
             <div class="col-lg-12">
             <section class="panel">
                 <header class="panel-heading">
-                Apply for Investment - Online Application Form
+                Credit Fund - Online Application Form
                   @if(count($errors) > 0 )
                  @foreach($errors->all() as $error)
                 <div class="alert alert-danger">{{$error}}</div>
@@ -63,7 +63,7 @@
 
 
  <center>
-                          <h3 style="color:#85144b">Product Information <span></span><i class="fa fa-list "style="color: red" aria-hidden="true"></i></h3>
+                          <h3 style="color:#85144b">Product's Information <span></span><i class="fa fa-list "style="color: red" aria-hidden="true"></i></h3>
                           <hr>
                         </center>
 
@@ -71,14 +71,14 @@
      <div class="row" style="margin-top: 20px" id="forAttach"><div class="col-md-12"><div class="col-sm-5"><input type="" name="product_name[]" class="form-control round-input" placeholder="product"></div><div class="col-sm-5"><input type=""  name="percentage[]" class="form-control round-input" placeholder="% of sales"></div><div class="col-sm-2"><button type="button" class="btn btn-info" id="add">Add</button></div></div></div>
 
 <center>
-                          <h3 style="color:#85144b">Competitor Information <span></span><i class="fa fa-user "style="color: red" aria-hidden="true"></i></h3>
+                          <h3 style="color:#85144b">Competitor's Information <span></span><i class="fa fa-user "style="color: red" aria-hidden="true"></i></h3>
                           <hr>
                         </center>
 <div class="row" style="margin-top: 20px" id="forCompetitors"><div class="col-md-12"><div class="col-sm-3"><input type="" name="competitor[]" class="form-control round-input" placeholder="competitor"></div><div class="col-sm-3"><input type=""  name="country[]" class="form-control round-input" placeholder="country"></div><div class="col-sm-4"><input type="" value="" name="products[]" class="form-control round-input" placeholder="products"></div><div class="col-sm-2"><button type="button" class="btn btn-info" id="addCompetitors">Add</button></div></div></div>
 <!--  -->
 
 <center>
-                          <h3 style="color:#85144b">Suppliers Information <span></span><i class="fa fa-user "style="color: red" aria-hidden="true"></i></h3>
+                          <h3 style="color:#85144b">Supplier's Information <span></span><i class="fa fa-user "style="color: red" aria-hidden="true"></i></h3>
                           <hr>
                         </center>
 <!--  -->
@@ -86,7 +86,7 @@
 <!--  -->
 
 <center>
-                          <h3 style="color:#85144b">Customer Information <span></span><i class="fa fa-user "style="color: red" aria-hidden="true"></i></h3>
+                          <h3 style="color:#85144b">Customer's Information <span></span><i class="fa fa-user "style="color: red" aria-hidden="true"></i></h3>
                           <hr>
                         </center>
 <!--  -->
@@ -102,7 +102,7 @@
 <!--  -->
 
 <center>
-                          <h3 style="color:#85144b">Other Bank and non Bank facilities:<span></span><i class="fa fa-bank "style="color: red" aria-hidden="true"></i></h3>
+                          <h3 style="color:#85144b">Bank and Non Bank facilities:<span></span><i class="fa fa-bank "style="color: red" aria-hidden="true"></i></h3>
                           <hr>
                         </center>
 
@@ -116,13 +116,13 @@
 
 <div class="row" style="margin-top: 20px">
     <div class="col-md-12">
-        <label class="col-md-2">Commercial Registeration</label>
+        <label class="col-md-2">Latest Commercial Registeration</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Commercial">
         </div>
         <label class="col-md-2">Management Accounts</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Management">
         </div>
     </div>
 </div>
@@ -131,11 +131,11 @@
     <div class="col-md-12">
         <label class="col-md-2">Audited Financial statement</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Financial">
         </div>
         <label class="col-md-2">Financial Forecast(Next 3 yr)</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Forecast">
         </div>
     </div>
 </div>
@@ -143,11 +143,11 @@
     <div class="col-md-12">
         <label class="col-md-2">Latest Aging Payable</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Payable">
         </div>
         <label class="col-md-2">Latest Aging Recieveable</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Aging">
         </div>
     </div>
 </div>
@@ -155,11 +155,11 @@
     <div class="col-md-12">
         <label class="col-md-2">Ownership structure</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Ownership">
         </div>
         <label class="col-md-2">Management structure</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="structure">
         </div>
     </div>
 </div>
@@ -168,11 +168,11 @@
     <div class="col-md-12">
         <label class="col-md-2">Authorised signorities</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Authorised">
         </div>
         <label class="col-md-2">Business Plan</label>
         <div class="col-md-4">
-            <input type="file" name="">
+            <input type="file" name="Business_plan">
         </div>
     </div>
 </div>

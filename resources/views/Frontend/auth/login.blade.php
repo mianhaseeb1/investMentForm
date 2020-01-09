@@ -4,7 +4,7 @@ login-body
 @endsection
 @section('content')
     <div class="login-logo">
-          <img src="img/login_logo.png" alt=""/>
+          <img src="{{url('img/backend/admin3.png')}}" style="width: 150px" alt=""/>
       </div>
 
       <h2 class="form-heading">login</h2>
@@ -18,24 +18,12 @@ login-body
                 <input type="password" name="password"  class="form-control"/ placeholder ={{trans('validation.attributes.frontend.register-user.password') }} />
                 <button class = 'btn btn-danger btn btn-block' style = 'margin-right:15px' type="submit">{{trans('labels.frontend.auth.login_button')}}</button>
                    
-                  <div class="login-social-link">
-                      <a href="index.html" class="facebook">
-                          Facebook
-                      </a>
-                      <a href="index.html" class="twitter">
-                          Twitter
-                      </a>
-                  </div>
+                  
                   <label class="checkbox-custom check-success">
                       <a class="pull-right" data-toggle="modal" href="#forgotPass"> Forgot Password?</a>
                   </label>
 
-                  <div class="registration">
-                      Don't have an account yet?
-                      <a class="" href="registration.html">
-                          Create an account
-                      </a>
-                  </div>
+                 
 
               </div>
 </form>

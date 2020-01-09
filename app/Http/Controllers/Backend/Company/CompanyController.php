@@ -13,6 +13,7 @@ use App\Models\Company\Company_Competitor;
 use App\Models\Company\Company_Management;
 use Alert;
 use Yajra\DataTables\Facades\DataTables;
+use App\Models\File\File;
 
 class CompanyController extends Controller
 {
@@ -44,6 +45,9 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
+
+       
+
         $company = new Company;
         $company->name = $request->company_name;
         $company->website_url =$request->company_website;
@@ -96,6 +100,170 @@ class CompanyController extends Controller
     $company_management->year_in_industry =$request->year_in_industry[0];
     $company_management->save();
 
+$file = new File;
+$file->company_id =$company->id;
+     if (isset($request->Commercial)) {
+          $profilePic_filename = $request->Commercial->getClientOriginalName();
+          $profilePic_extension = $request->Commercial->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $CommercialPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Commercial->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+
+          $file->Commercial=$CommercialPath;
+      }
+      else
+      {
+        $file->Commercial="null";
+      }
+      if (isset($request->Management)) {
+          $profilePic_filename = $request->Management->getClientOriginalName();
+          $profilePic_extension = $request->Management->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $ManagementPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Management->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+          $file->Management=$ManagementPath;
+      }
+      else
+      {
+        $file->Management="null";
+      }
+      if (isset($request->Financial)) {
+          $profilePic_filename = $request->Financial->getClientOriginalName();
+          $profilePic_extension = $request->Financial->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $FinancialPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Financial->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+          $file->Financial = $FinancialPath; 
+      }
+      else
+      {
+         $file->Financial = "null";
+      }
+      if (isset($request->Forecast)) {
+          $profilePic_filename = $request->Forecast->getClientOriginalName();
+          $profilePic_extension = $request->Forecast->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $ForecastPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Forecast->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+          $file->Forecast = $ForecastPath;
+      }
+      else
+      {
+         $file->Forecast = "null";
+      }
+      if (isset($request->Payable)) {
+          $profilePic_filename = $request->Payable->getClientOriginalName();
+          $profilePic_extension = $request->Payable->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $PayablePath = $profilePicFolderName . $storeProfilePicName;
+          $request->Payable->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+          $file->Payable = $PayablePath;
+      }
+      else
+      {
+         $file->Payable = "null";
+      }
+      if (isset($request->Aging)) {
+          $profilePic_filename = $request->Aging->getClientOriginalName();
+          $profilePic_extension = $request->Aging->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/filesData/';
+          $AgingPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Aging->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+
+          $file->Aging = $AgingPath;
+      }
+      else
+      {
+         $file->Aging = "null"; 
+      }
+      if (isset($request->Ownership)) {
+          $profilePic_filename = $request->profilePic->getClientOriginalName();
+          $profilePic_extension = $request->profilePic->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $OwnershipPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Ownership->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+          $file->Ownership = $OwnershipPath;
+      }
+      else
+      {
+        $file->Ownership = "null";
+      }
+      if (isset($request->structure)) {
+          $profilePic_filename = $request->profilePic->getClientOriginalName();
+          $profilePic_extension = $request->profilePic->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $structurePath = $profilePicFolderName . $storeProfilePicName;
+          $request->structure->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+
+          $file->structure =$structurePath;
+      }
+      else
+      {
+         $file->structure = "null";
+      }
+      if (isset($request->Authorised)) {
+          $profilePic_filename = $request->profilePic->getClientOriginalName();
+          $profilePic_extension = $request->profilePic->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $AuthorisedPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Authorised->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+          $file->Authorised = $AuthorisedPath;
+      }
+      else
+      {
+        $file->Authorised = "null";
+      }
+      if (isset($request->Business_plan)) {
+          $profilePic_filename = $request->profilePic->getClientOriginalName();
+          $profilePic_extension = $request->profilePic->getClientOriginalExtension();
+          $randName = $profilePic_filename;
+          $randImgName    = explode(".",$randName);
+          $storeProfilePicName =$company->id.$randImgName[0] . "." . $profilePic_extension;
+          $profilePicFolderName = '/ProfilePicFrames/';
+          $Business_planPath = $profilePicFolderName . $storeProfilePicName;
+          $request->Business_plan->move(public_path() . $profilePicFolderName, $storeProfilePicName);
+
+          $file->Business_plan=$Business_plan;
+      }
+      else
+      {
+        $file->Business_plan = "null";
+      }
+
+$file->save();
+
+
+
+
+
+
      Alert::success('successfully Request Submit', "Stay Connected");
      return back();
 }
@@ -108,7 +276,15 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        //
+        $Company_product    = Company_Product::where('company_id',$id)->get();
+        $Company_Supplier   = Company_Supplier::where('company_id',$id)->get();
+        $Company_Competitor = Company_Competitor::where('company_id',$id)->get();
+        $Company_Customer   = Company_Customer::where('company_id',$id)->get();
+        $Company_Bank       = Company_Bank::where('company_id',$id)->get();
+        $Company_Management = Company_Management::where('company_id',$id)->get();
+        $file = File::where('company_id',$id)->first();
+        // dd($file);
+        return view('Backend.company.detail',compact('Company_product','Company_Supplier','Company_Competitor','Company_Customer','Company_Bank','Company_Management','file'));
     }
 
     /**
@@ -142,7 +318,9 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $company =Company::where('id',$id)->delete();
+         Alert::success('successfully deleted', "Application Deleted");
+     return back();
     }
     public function list()
     {
@@ -168,7 +346,7 @@ class CompanyController extends Controller
             })
             
                ->editColumn('Action', function ($company) {
-                return '<a class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a><a class="btn btn-danger" style="margin-left:5px"><i class="fa fa-trash" aria-hidden="true"></i></a>';
+                return '<a href=\''.route('company.show',[$company->id]).'\' class="btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i></a><a class="btn btn-danger" style="margin-left:5px"><i class="fa fa-trash" aria-hidden="true"></i></a>';
             })
                
               ->rawColumns(['Action'])
